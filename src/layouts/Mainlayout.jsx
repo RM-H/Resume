@@ -1,25 +1,25 @@
-import { Outlet } from "react-router-dom";
+import {Outlet} from "react-router-dom";
+import {Nav} from '../components/index.js'
 
 const Mainlayout = () => {
-  return (
-    <>
-      <div
-        className="container "
-        style={{
-          minHeight: "100vh",
-          marginRight: "auto",
-          marginLeft: "auto",
+    return (
+        <>
+            <div
+                className="container "
+                style={{
+                    minHeight: "100vh",
+                    marginRight: "auto",
+                    marginLeft: "auto",
 
 
-        }}
-      >
+                }}
+            >
 
-          <div style={{backgroundColor:"red"}}>
+                <Nav/>
 
-          </div>
-        <Outlet />
-      </div>
-    </>
-  );
+                <Outlet/>
+            </div>
+        </>
+    );
 };
 export default Mainlayout;

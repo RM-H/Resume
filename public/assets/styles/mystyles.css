@@ -1,23 +1,53 @@
-
-
-
 /*-----------------*/
 /*     general     */
 /*-----------------*/
 
-body{
+body {
     margin: 0;
 }
 
 .container {
-    width : 1660px
+    width: 1660px
 }
 
 
+/*-----------------*/
+/*     fonts     */
+/*-----------------*/
+@font-face {
+    font-family: 'bodyfont';
+    src: url("/assets/fonts/body.ttf");
+}
+@font-face {
+    font-family: 'title';
+    src: url("/assets/fonts/titles.ttf");
+}
 
+@font-face {
+    font-family: 'typewriter';
+    src: url("/assets/fonts/typewriter.ttf");
+}
 
+@font-face {
+    font-family: 'signature';
+    src: url("/assets/fonts/signature.otf");
+}
 
+.bodyfont {
+    font-family: bodyfont;
+}
 
+.typewriter {
+    font-family: typewriter;
+}
+
+.title {
+    font-family: title;
+}
+
+.signature {
+    font-family: signature;
+}
 
 
 /*-----------------*/
