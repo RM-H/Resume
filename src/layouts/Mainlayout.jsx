@@ -10,6 +10,7 @@ const Mainlayout = () => {
           marginRight: "auto",
           marginLeft: "auto",
 
+
         }}
       >
 
