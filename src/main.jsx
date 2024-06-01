@@ -2,8 +2,7 @@ import React from 'react'
 import ReactDOM from 'react-dom/client'
 import Mainlayout from "./layouts/Mainlayout.jsx";
 import {createBrowserRouter, RouterProvider} from "react-router-dom";
-import {createTheme, ThemeProvider} from "@mui/material";
-import bodyfont from '/assets/fonts/body.ttf'
+import Home from './pages/Home.jsx'
 
 const router = createBrowserRouter([
     {
@@ -12,10 +11,10 @@ const router = createBrowserRouter([
 
 
         children: [
-            // {
-            //     path:'/ats' ,
-            //     element: <Department/>
-            // }
+            {
+                path:'/' ,
+                element: <Home/>
+            }
 
 
         ]

@@ -1,13 +1,23 @@
 /*-----------------*/
 /*     general     */
 /*-----------------*/
+.zindex {
+    position: relative;
+    z-index: 2;
+}
+
 
 body {
     margin: 0;
 }
 
 .container {
-    width: 1660px
+    padding-right: 9rem;
+
+}
+
+.w100 {
+    width: 100%;
 }
 
 
@@ -34,21 +44,31 @@ body {
 }
 
 .bodyfont {
-    font-family: bodyfont;
+    font-family: bodyfont !important;
 }
 
 .typewriter {
-    font-family: typewriter;
+    font-family: typewriter !important;
 }
 
 .title {
-    font-family: title;
+    font-family: title !important;
 }
 
 .signature {
-    font-family: signature;
+    font-family: signature !important;
 }
 
+
+.titleFS {
+    font-size: 3rem !important;
+}
+.subtitleFS {
+    font-size: 1.9rem !important;
+}
+.menuitemFS {
+    font-size: 1.3rem !important;
+}
 
 /*-----------------*/
 /*     colors     */
@@ -57,3 +77,47 @@ body {
 .clrone {
     background-color: #252525;
 }
+
+.clrtwo {
+    background-color: rgb(15 23 42);
+}
+
+
+.clrthreetext {
+    color: #ffff;
+}
+
+
+.clrfourtext {
+    color: #cecbcb !important;
+}
+.clrfivetext {
+    color: #bababa !important;
+}
+
+
+
+/*-----------------*/
+/*     animations  */
+/*-----------------*/
+
+
+.menuindicator>.indicator {
+    border-bottom: 0.1rem solid white;
+    width: 1rem;
+    transition: width 0.3s ease-in-out;
+}
+
+
+
+.menuindicator:hover {
+    .indicator {
+        width:5rem;
+
+
+
+    }
+
+}
+
+
