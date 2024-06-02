@@ -17,6 +17,8 @@ const Mainlayout = () => {
     const [active,setActive] = useState(1)
     const handleactivechange = (page) => {
       setActive(page)
+        const element = document.getElementById(page);
+     element.scrollIntoView({ behavior: "smooth"})
     }
 
 
@@ -29,7 +31,7 @@ const Mainlayout = () => {
                   className="container clrtwo "
 
                   style={{
-                      minHeight: "100vh",
+                      height: "100vh",
                       marginRight: "auto",
                       marginLeft: "auto",
 
@@ -57,21 +59,35 @@ const Mainlayout = () => {
                                 <ListItemText  primary={<span className={`title menuitemFS  ${active===3? 'clrthreetext':"clrfivetext"}`}>Select Projects</span>} />
                             </ListItemButton>
                         </ListItem>
+
+                        <ListItem  onClick={()=>handleactivechange(3)}>
+                            <ListItemButton className='menuindicator '>
+                                <span className='indicator'  style={{width:active===3 && "5rem"}}/>
+                                <ListItemText  primary={<span className={`title menuitemFS  ${active===3? 'clrthreetext':"clrfivetext"}`}> Relevant Education</span>} />
+                            </ListItemButton>
+                        </ListItem>
+                        <ListItem  onClick={()=>handleactivechange(3)}>
+                            <ListItemButton className='menuindicator '>
+                                <span className='indicator'  style={{width:active===3 && "5rem"}}/>
+                                <ListItemText  primary={<span className={`title menuitemFS  ${active===3? 'clrthreetext':"clrfivetext"}`}> linguistic skills :)</span>} />
+                            </ListItemButton>
+                        </ListItem>
                     </List>
                 </Grid>
 
-                <Grid xs={10} sx={{overflow:'auto'}}>
+                <Grid xs={10} sx={{height:'90vhvh'}} >
                     {/*<Nav/>*/}
 
-                    <main>
+                    <main >
                         <Outlet/>
                     </main>
 
                 </Grid>
 
 
+                <Footer/>
             </Grid>
-            <Footer/>
+
 
         </>
     );

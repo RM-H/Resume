@@ -3,10 +3,10 @@ import {Typography} from '@mui/material'
 const Footer = () => {
   return(
       <>
-      <footer className=" clrtwo container" style={{minHeight:'20rem'}} >
+      <footer className=" container" style={{height:'10vh'}} >
 
           <Typography className='signature'  sx={{color:'white' , fontSize:'6rem' , position:'relative' , zIndex:1}}>
-              Ramin Hasani
+            Designed by:  Ramin Hasani
           </Typography>
 
       </footer>

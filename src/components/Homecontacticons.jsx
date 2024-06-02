@@ -5,11 +5,11 @@ import {GitHub,EmailOutlined,Instagram,LinkedIn} from '@mui/icons-material'
 const Homecontacticons = () => {
   return(
       <>
-          <Box >
-              <Chip icon={<LinkedIn/>}/>
-              <Chip icon={<EmailOutlined/>}/>
-              <Chip icon={<Instagram/>}/>
-              <Chip icon={<GitHub/>}/>
+          <Box sx={{ mt:'auto'}}>
+              <Chip clickable  sx={{mx:0.6}}  icon={<LinkedIn className='iconhover'/>}/>
+              <Chip clickable  sx={{mx:0.6}}  icon={<EmailOutlined className='iconhover' />}/>
+              <Chip clickable  sx={{mx:0.6}}  icon={<Instagram className='iconhover' />}/>
+              <Chip clickable  sx={{mx:0.6}}  icon={<GitHub className='iconhover' />}/>
 
           </Box>
 

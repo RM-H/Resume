@@ -3,22 +3,17 @@ import {Homeabout} from '../components/index.js'
 
 
 const Home = () => {
-  return(
-      <>
-          <Grid container sx={{pt:15}}>
-            <Homeabout/>
+    return (
+        <>
+            <Grid container sx={{pt: 15 }} >
+                <Homeabout/>
 
 
 
+            </Grid>
 
 
-
-          </Grid>
-
-
-
-
-      </>
-  )
+        </>
+    )
 }
 export default Home;
