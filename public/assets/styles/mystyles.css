@@ -106,7 +106,7 @@ body {
 
 
 .clrthreetext {
-    color: #ffff;
+    color: #ffff !important;
 }
 
 
@@ -137,6 +137,7 @@ body {
     border-bottom: 0.1rem solid white;
     width: 1rem;
     transition: width 0.3s ease-in-out;
+    margin-right: 0.3rem;
 }
 
 
@@ -165,6 +166,14 @@ body {
 
 .borderbotwhite {
     border-bottom: 0.1rem dotted #717070;
+}
+
+.card {
+    border-radius: 1rem;
+}
+.card:hover {
+    background-color:rgb(45 212 191 / 10%) ;
+    transition: 0.1s;
 }
 
 

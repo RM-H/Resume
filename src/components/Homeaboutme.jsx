@@ -1,10 +1,39 @@
 import Grid from "@mui/material/Unstable_Grid2";
 import { ReactTyped } from "react-typed";
-import {Typography, Divider} from "@mui/material";
-import {HomeIcons , HomeSkills} from './index.js'
+import {Typography, } from "@mui/material";
+import {HomeIcons , HomeSkills,Homeprojects,Experiencecard} from './index.js'
+import {useDispatch} from "react-redux";
+import {useEffect} from "react";
+import {changeNav} from "../slices/navigationSlice.js";
 
 
 const Homeaboutme = () => {
+
+
+    const dispatch = useDispatch()
+    useEffect(() => {
+        let el = document.getElementById(1)
+        const intersectionObserver = new IntersectionObserver((entries) => {
+            // If intersectionRatio is 0, the target is out of view
+            // and we do not need to do anything.
+            console.log(entries)
+            if (entries[0].intersectionRatio <= 0) {
+                return;
+            }else {
+                dispatch(changeNav(1))
+            }
+
+
+            // console.log("Loaded new items");
+            console.log(entries)
+        });
+// start observing
+        intersectionObserver.observe(el);
+    }, []);
+
+
+
+
   return(
       <>
 
@@ -54,12 +83,12 @@ const Homeaboutme = () => {
 
 
 
-                      <Typography component='article' sx={{ textAlign:'justify' , mt:2 }} className='bodyfont bodyFS--lineheight clrfourtext zindex'>
-                          Back in 2013, I won an award from <strong className='clrthreetext'>
-                          Samsung Electronics </strong>   & <strong className='clrthreetext'>  Sharif University of Technology</strong>
+                      <Typography  component='article' sx={{ textAlign:'justify' , mt:2 }} className='bodyfont bodyFS--lineheight clrfourtext zindex'>
+                          Back in 2013, I won an award from <strong className='clrsixtext'>
+                          Samsung Electronics </strong>   & <strong className='clrsixtext'>  Sharif University of Technology</strong>
                           in the field of best ideas.
-                          I didnt have the privilege to educate in the field of technology until 2018, when I started my <strong className='clrthreetext'> master's degree</strong>  education in the field of Technology Management and Innovation at <strong className='clrthreetext'>Shahid Beheshti University </strong> , during which I worked as a part-time researcher in the field of Technology in a private institute.
-                          After graduation, I started as a front-end development intern and learned more about Front-end development. Technologies like Javascript made much sense to me. So my time and effort has been dedicated to learning Javascript related technologies such as <strong className='clrthreetext'>React JS </strong>   and <strong className='clrthreetext'>  Node JS  </strong> ever since. Fast-forward to today, and I’ve had the privilege of building software for an <strong className='clrthreetext'>advertising agency & many of their clients </strong> , a <strong className='clrthreetext'>start-up </strong> ,a <strong className='clrthreetext'>factory </strong> and a <strong className='clrthreetext'>digital product studio </strong> .
+                          I didnt have the privilege to educate in the field of technology until 2018, when I started my <strong className='clrsixtext'> master's degree</strong>  education in the field of Technology Management and Innovation at <strong className='clrsixtext'>Shahid Beheshti University </strong> , during which I worked as a part-time researcher in the field of Technology in a private institute.
+                          After graduation, I started as a front-end development intern and learned more about Front-end development. Technologies like Javascript made much sense to me. So my time and effort has been dedicated to learning Javascript related technologies such as <strong className='clrsixtext'>React JS </strong>   and <strong className='clrsixtext'>  Node JS  </strong> ever since. Fast-forward to today, and I’ve had the privilege of building software for an <strong className='clrsixtext'>advertising agency & many of their clients </strong> , a <strong className='clrsixtext'>start-up </strong> ,a <strong className='clrsixtext'>factory </strong> and a <strong className='clrsixtext'>digital product studio </strong> .
 
                           When I’m not at the computer, I’m usually cycling, woodworking, or just walking by myself.
 
@@ -73,9 +102,15 @@ const Homeaboutme = () => {
                   <HomeSkills/>
 
 
+                  <Homeprojects/>
+
+
+
               </Grid>
 
           </Grid>
+
+
 
       </>
   )

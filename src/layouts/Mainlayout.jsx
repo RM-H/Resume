@@ -1,5 +1,5 @@
 import {Outlet} from "react-router-dom";
-import {Nav, Footer} from '../components/index.js'
+import { Footer} from '../components/index.js'
 import Cursor from '../components/Cursor.jsx'
 
 import Grid from '@mui/material/Unstable_Grid2';
@@ -7,16 +7,23 @@ import List from "@mui/material/List";
 import ListItem from "@mui/material/ListItem";
 import ListItemButton from "@mui/material/ListItemButton";
 import ListItemText from "@mui/material/ListItemText";
-import {useState} from 'react'
+
+import {useSelector , useDispatch} from "react-redux";
+import {activeSelector,changeNav} from '../slices/navigationSlice.js'
 
 
 const Mainlayout = () => {
 
 
-    // handle active section
-    const [active,setActive] = useState(1)
+    const dataNeeded = useSelector(activeSelector)
+
+    const dispatch = useDispatch()
+
+
+    // // handle active section
+
     const handleactivechange = (page) => {
-      setActive(page)
+      dispatch(changeNav(page))
         const element = document.getElementById(page);
      element.scrollIntoView({ behavior: "smooth"})
     }
@@ -43,33 +50,33 @@ const Mainlayout = () => {
                     <List className='w100'>
                         <ListItem onClick={()=>handleactivechange(1)} >
                             <ListItemButton className='menuindicator '>
-                                <span className='indicator' style={{width:active===1 && "5rem"}} />
-                                <ListItemText  primary={<span className={`title menuitemFS  ${active===1 ? 'clrthreetext':"clrfivetext"}`}>About</span>} />
+                                <span className='indicator' style={{width:dataNeeded===1 && "5rem"  , borderColor:dataNeeded===1 && "rgb(94 234 212) "}} />
+                                <ListItemText  primary={<span className={`title menuitemFS  ${dataNeeded===1 ? 'clrsixtext':"clrfivetext"}`}>About</span>} />
                             </ListItemButton>
                         </ListItem>
                         <ListItem onClick={()=>handleactivechange(2)}>
                             <ListItemButton className='menuindicator '>
-                                <span className='indicator'  style={{width:active===2 && "5rem"}}/>
-                                <ListItemText  primary={<span className={`title menuitemFS  ${active===2 ? 'clrthreetext':"clrfivetext"}`}>Skills</span>} />
+                                <span className='indicator'  style={{width:dataNeeded===2 && "5rem"  , borderColor:dataNeeded===2 && "rgb(94 234 212) "}}/>
+                                <ListItemText  primary={<span className={`title menuitemFS  ${dataNeeded===2 ? 'clrsixtext':"clrfivetext"}`}>Skills</span>} />
                             </ListItemButton>
                         </ListItem>
                         <ListItem  onClick={()=>handleactivechange(3)}>
                             <ListItemButton className='menuindicator '>
-                                <span className='indicator'  style={{width:active===3 && "5rem"}}/>
-                                <ListItemText  primary={<span className={`title menuitemFS  ${active===3? 'clrthreetext':"clrfivetext"}`}>Select Projects</span>} />
+                                <span className='indicator'  style={{width:dataNeeded===3 && "5rem"  , borderColor:dataNeeded===3 && "rgb(94 234 212) "}}/>
+                                <ListItemText  primary={<span className={`title menuitemFS  ${dataNeeded===3? 'clrsixtext':"clrfivetext"}`}>Select Projects</span>} />
                             </ListItemButton>
                         </ListItem>
 
-                        <ListItem  onClick={()=>handleactivechange(3)}>
+                        <ListItem  onClick={()=>handleactivechange(4)}>
                             <ListItemButton className='menuindicator '>
-                                <span className='indicator'  style={{width:active===3 && "5rem"}}/>
-                                <ListItemText  primary={<span className={`title menuitemFS  ${active===3? 'clrthreetext':"clrfivetext"}`}> Relevant Education</span>} />
+                                <span className='indicator'  style={{width:dataNeeded===4 && "5rem" , borderColor:dataNeeded===4 && "rgb(94 234 212) "}}/>
+                                <ListItemText  primary={<span className={`title menuitemFS  ${dataNeeded===4? 'clrsixtext':"clrfivetext"}`}> Relevant Education</span>} />
                             </ListItemButton>
                         </ListItem>
-                        <ListItem  onClick={()=>handleactivechange(3)}>
+                        <ListItem  onClick={()=>handleactivechange(5)}>
                             <ListItemButton className='menuindicator '>
-                                <span className='indicator'  style={{width:active===3 && "5rem"}}/>
-                                <ListItemText  primary={<span className={`title menuitemFS  ${active===3? 'clrthreetext':"clrfivetext"}`}> linguistic skills :)</span>} />
+                                <span className='indicator'  style={{width:dataNeeded===5 && "5rem"  , borderColor:dataNeeded===5 && "rgb(94 234 212) "}}/>
+                                <ListItemText  primary={<span className={`title menuitemFS  ${dataNeeded===5? 'clrsixtext':"clrfivetext"}`}> linguistic skills :)</span>} />
                             </ListItemButton>
                         </ListItem>
                     </List>
