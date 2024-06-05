@@ -70,7 +70,7 @@ const Mainlayout = () => {
                         <ListItem  onClick={()=>handleactivechange(4)}>
                             <ListItemButton className='menuindicator '>
                                 <span className='indicator'  style={{width:dataNeeded===4 && "5rem" , borderColor:dataNeeded===4 && "rgb(94 234 212) "}}/>
-                                <ListItemText  primary={<span className={`title menuitemFS  ${dataNeeded===4? 'clrsixtext':"clrfivetext"}`}> Relevant Education</span>} />
+                                <ListItemText  primary={<span className={`title menuitemFS  ${dataNeeded===4? 'clrsixtext':"clrfivetext"}`}>  Education</span>} />
                             </ListItemButton>
                         </ListItem>
                         <ListItem  onClick={()=>handleactivechange(5)}>
@@ -82,7 +82,7 @@ const Mainlayout = () => {
                     </List>
                 </Grid>
 
-                <Grid xs={10} sx={{height:'90vhvh'}} >
+                <Grid xs={10} sx={{height:'100vh'}} >
                     {/*<Nav/>*/}
 
                     <main >
@@ -92,7 +92,7 @@ const Mainlayout = () => {
                 </Grid>
 
 
-                <Footer/>
+
             </Grid>
 
 

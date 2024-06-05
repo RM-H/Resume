@@ -13,6 +13,9 @@ body {
 
 
 }
+a {
+    cursor: url('/assets/icons/cursor.png'), auto;
+}
  html body {
      max-height: 100vh;
 
@@ -64,6 +67,7 @@ body {
 
 .signature {
     font-family: signature !important;
+    font-size: 7rem !important;
 }
 
 
@@ -89,6 +93,8 @@ body {
 .bodyfont--bold {
     font-weight: bold;
 }
+
+
 
 
 
@@ -118,13 +124,19 @@ body {
 }
 
 .clrsix {
-    background-color: rgb(94 234 212);
+    background-color: rgb(94 234 212) !important;
 }
 
 
 .clrsixtext {
   color: rgb(94 234 212);
 }
+
+.clrseven {
+    background-color: rgb(45 212 191 / 10%) !important;
+}
+
+
 
 
 
@@ -137,7 +149,7 @@ body {
     border-bottom: 0.1rem solid white;
     width: 1rem;
     transition: width 0.3s ease-in-out;
-    margin-right: 0.3rem;
+
 }
 
 
@@ -173,7 +185,8 @@ body {
 }
 .card:hover {
     background-color:rgb(45 212 191 / 10%) ;
-    transition: 0.1s;
+
+    transition:  0.2s ease-in;
 }
 
 

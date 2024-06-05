@@ -1,7 +1,7 @@
 import Grid from "@mui/material/Unstable_Grid2";
 import { ReactTyped } from "react-typed";
 import {Typography, } from "@mui/material";
-import {HomeIcons , HomeSkills,Homeprojects,Experiencecard} from './index.js'
+import {HomeIcons , HomeSkills,Homeprojects,Education,Linguistics} from './index.js'
 import {useDispatch} from "react-redux";
 import {useEffect} from "react";
 import {changeNav} from "../slices/navigationSlice.js";
@@ -64,8 +64,8 @@ const Homeaboutme = () => {
 
 
           <Grid xs={8}>
-              <Grid container sx={{overflow:'auto' , height:'35rem' ,px:3 }}>
-                  <Grid className=' zindex' xs={12} id={1} sx={{mb:2 , height:'100%' }}>
+              <Grid container sx={{overflow:'auto' ,maxHeight:'81vh' ,px:3 }}>
+                  <Grid className=' zindex' xs={12} id={1} sx={{mb:2 , minHeight:'80vh' }}>
                       <ReactTyped
                           backSpeed={50}
                           startWhenVisible
@@ -103,6 +103,10 @@ const Homeaboutme = () => {
 
 
                   <Homeprojects/>
+
+                  <Education/>
+
+                  <Linguistics/>
 
 
 

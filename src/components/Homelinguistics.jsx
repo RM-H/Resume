@@ -3,22 +3,20 @@ import {Typography} from "@mui/material";
 import {useDispatch} from "react-redux";
 import {useEffect} from "react";
 import {changeNav} from "../slices/navigationSlice.js";
-import {Experiencecard} from '../components/index.js'
 
 
-const Homeprojects = () => {
-
+const Homelinguistics = () => {
     // changing active page when component comes into view
     const dispatch = useDispatch()
     useEffect(() => {
-        let el = document.getElementById(3)
+        let el = document.getElementById(5)
         const intersectionObserver = new IntersectionObserver((entries) => {
             // If intersectionRatio is 0, the target is out of view
             // and we do not need to do anything.
             if (entries[0].intersectionRatio <= 0) {
                 return;
-            } else {
-                dispatch(changeNav(3))
+            }else {
+                dispatch(changeNav(5))
             }
 
 
@@ -28,28 +26,30 @@ const Homeprojects = () => {
 // start observing
         intersectionObserver.observe(el);
     }, []);
-
-
     return (
         <>
-            <Grid className='zindex' xs={12} id={3} sx={{minHeight: '80vh'}}>
+            <Grid className='zindex' xs={12} id={5} sx={{minHeight: '80vh'}}>
+
+
                 <Grid container>
 
 
                     <Grid xs={12} sx={{mb: 3}}>
                         <Typography component='article' className='title titleFS clrthreetext zindex'>
-                            Select Projects
+                            Linguistic Skills
 
                         </Typography>
                     </Grid>
 
 
-                    {/*experience cards*/}
 
 
-                    <Experiencecard/>
+                    <Grid xs={12}>
+                        <Typography component='p' className='signature clrthreetext' style={{textAlign:'center'}}>
+                            Designed By <strong className='clrsixtext'>:</strong>  Ramin Hasani
+                        </Typography>
 
-
+                    </Grid>
                 </Grid>
             </Grid>
 
@@ -57,4 +57,4 @@ const Homeprojects = () => {
         </>
     )
 }
-export default Homeprojects;
+export default Homelinguistics

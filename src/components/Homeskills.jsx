@@ -36,7 +36,7 @@ const Homeskills = () => {
 
 
     return (
-        <Grid className='zindex' id={2} xs={12} sx={{height: '100%'}} >
+        <Grid className='zindex' id={2} xs={12} sx={{minHeight: '80vh'}} >
             <Grid container>
                 <Grid xs={12}  sx={{mb:3}}>
                     <Typography component='article' className='title titleFS clrthreetext zindex'>
