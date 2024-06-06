@@ -5,7 +5,7 @@ import {Homeabout} from '../components/index.js'
 const Home = () => {
     return (
         <>
-            <Grid container sx={{pt: 15 }} >
+            <Grid container sx={{pt: {xs:2, sm:15} , maxHeight:'100vh' }} >
                 <Homeabout/>
 
 

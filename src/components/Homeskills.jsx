@@ -13,7 +13,7 @@ const Homeskills = () => {
     // changing active page when component comes into view
     const dispatch = useDispatch()
     useEffect(() => {
-        let el = document.getElementById(2)
+        let el2 = document.getElementById(2)
         const intersectionObserver = new IntersectionObserver((entries) => {
             // If intersectionRatio is 0, the target is out of view
             // and we do not need to do anything.
@@ -25,10 +25,14 @@ const Homeskills = () => {
 
 
             // console.log("Loaded new items");
-            console.log(entries)
+
+        },{
+            root: null, // relative to document viewport
+            rootMargin: '0px',
+            threshold: 0.5 // trigger callback when 10% of the target is visible
         });
 // start observing
-        intersectionObserver.observe(el);
+        intersectionObserver.observe(el2);
     }, []);
 
 
@@ -36,10 +40,10 @@ const Homeskills = () => {
 
 
     return (
-        <Grid className='zindex' id={2} xs={12} sx={{minHeight: '80vh'}} >
-            <Grid container>
+        <Grid className='zindex' id={2}  xs={12} sx={{minHeight: '100vh'}} >
+            <Grid container  >
                 <Grid xs={12}  sx={{mb:3}}>
-                    <Typography component='article' className='title titleFS clrthreetext zindex'>
+                    <Typography  component='article' className='title titleFS clrthreetext zindex'>
                         Skills
 
                     </Typography>

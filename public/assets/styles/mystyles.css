@@ -13,6 +13,9 @@ body {
 
 
 }
+.cursor {
+    cursor: url('/assets/icons/cursor.png'), auto !important;
+}
 a {
     cursor: url('/assets/icons/cursor.png'), auto;
 }
@@ -67,7 +70,7 @@ a {
 
 .signature {
     font-family: signature !important;
-    font-size: 7rem !important;
+    font-size: 4rem !important;
 }
 
 
@@ -165,8 +168,9 @@ a {
 }
 
 .iconhover:hover {
-    color: #ffff !important ;
+    color: rgb(94 234 212) !important ;
     transition: 0.3s;
+    cursor: url('/assets/icons/cursor.png'), auto !important;
 }
 
 
@@ -215,3 +219,18 @@ a {
 
 
 
+
+
+/*----------------------------------------------------------*/
+/*                        Responsive                        */
+/*----------------------------------------------------------*/
+
+
+/*mobiles*/
+@media screen and (max-width: 500px) {
+    .container {
+        padding-right: 0;
+
+    }
+
+}

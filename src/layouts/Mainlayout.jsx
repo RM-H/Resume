@@ -46,7 +46,7 @@ const Mainlayout = () => {
                   }}
             >
 
-                <Grid xs={2} className='clrthreetext zindex' sx={{display:'flex' , flexDirection:'column' , justifyContent:'center' , alignItems:'center'}}>
+                <Grid sm={2} className='clrthreetext zindex' sx={{display:{xs:'none' , sm:'flex'} , flexDirection:'column' , justifyContent:'center' , alignItems:'center' }}>
                     <List className='w100'>
                         <ListItem onClick={()=>handleactivechange(1)} >
                             <ListItemButton className='menuindicator '>
@@ -82,7 +82,7 @@ const Mainlayout = () => {
                     </List>
                 </Grid>
 
-                <Grid xs={10} sx={{height:'100vh'}} >
+                <Grid xs={12} sm={10} sx={{height:'100vh'}} >
                     {/*<Nav/>*/}
 
                     <main >

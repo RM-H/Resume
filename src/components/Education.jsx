@@ -18,10 +18,11 @@ const Education = () => {
     // changing active page when component comes into view
     const dispatch = useDispatch()
     useEffect(() => {
-        let el = document.getElementById(4)
+        let el4 = document.getElementById(4)
         const intersectionObserver = new IntersectionObserver((entries) => {
             // If intersectionRatio is 0, the target is out of view
             // and we do not need to do anything.
+            // console.log(entries)
             if (entries[0].intersectionRatio <= 0) {
                 return;
             } else {
@@ -30,14 +31,19 @@ const Education = () => {
 
 
             // console.log("Loaded new items");
-            console.log(entries)
+
+        },{
+            root: null, // relative to document viewport
+            rootMargin: '0px',
+            threshold: 0.5, // trigger callback when 10% of the target is visible
+
         });
 // start observing
-        intersectionObserver.observe(el);
+        intersectionObserver.observe(el4);
     }, []);
     return (
         <>
-            <Grid className='zindex' xs={12} id={4} sx={{minHeight: '80vh'}}>
+            <Grid className='zindex' xs={12} id={4} sx={{minHeight: '100vh'}}>
                 <Grid container>
 
 

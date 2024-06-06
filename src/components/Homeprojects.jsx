@@ -11,7 +11,7 @@ const Homeprojects = () => {
     // changing active page when component comes into view
     const dispatch = useDispatch()
     useEffect(() => {
-        let el = document.getElementById(3)
+        let el3 = document.getElementById(3)
         const intersectionObserver = new IntersectionObserver((entries) => {
             // If intersectionRatio is 0, the target is out of view
             // and we do not need to do anything.
@@ -23,16 +23,20 @@ const Homeprojects = () => {
 
 
             // console.log("Loaded new items");
-            console.log(entries)
+
+        },{
+            root: null, // relative to document viewport
+            rootMargin: '0px',
+            threshold: 0.5 // trigger callback when 10% of the target is visible
         });
 // start observing
-        intersectionObserver.observe(el);
+        intersectionObserver.observe(el3);
     }, []);
 
 
     return (
         <>
-            <Grid className='zindex' xs={12} id={3} sx={{minHeight: '80vh'}}>
+            <Grid className='zindex' xs={12} id={3} sx={{minHeight: '100vh'}}>
                 <Grid container>
 
 
