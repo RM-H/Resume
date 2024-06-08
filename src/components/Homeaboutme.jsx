@@ -1,13 +1,91 @@
 import Grid from "@mui/material/Unstable_Grid2";
 import {ReactTyped} from "react-typed";
-import {Typography,} from "@mui/material";
-import {HomeIcons, HomeSkills, Homeprojects, Education, Linguistics} from './index.js'
-import {useDispatch} from "react-redux";
-import {useEffect} from "react";
-import {changeNav} from "../slices/navigationSlice.js";
+import {Typography,IconButton} from "@mui/material";
+import {HomeIcons, HomeSkills, Homeprojects, Education, Linguistics,} from './index.js'
+import {useDispatch, useSelector} from "react-redux";
+import {useEffect, useState} from "react";
+import {activeSelector, changeNav} from "../slices/navigationSlice.js";
+import Button from "@mui/material/Button";
+import Drawer from "@mui/material/Drawer";
+import Box from "@mui/material/Box";
+import List from "@mui/material/List";
+import ListItem from "@mui/material/ListItem";
+import ListItemButton from "@mui/material/ListItemButton";
+import ListItemText from "@mui/material/ListItemText";
+import {LunchDining} from '@mui/icons-material'
 
 
 const Homeaboutme = () => {
+
+    const dataNeeded = useSelector(activeSelector)
+
+    // drawer
+    const [open, setOpen] = useState(false);
+
+    const toggleDrawer = (newOpen) => () => {
+        setOpen(newOpen);
+    };
+
+
+    // for navigation
+    const handleactivechange = (page) => {
+        dispatch(changeNav(page))
+        const element = document.getElementById(page);
+        element.scrollIntoView({ behavior: "smooth"})
+    }
+
+    const DrawerList = (
+        <Box sx={{ width: '12rem' }} role="presentation" onClick={toggleDrawer(false)}>
+            <List className='w100' >
+                <ListItem onClick={()=>handleactivechange(1)} disablePadding >
+                    <ListItemButton className='menuindicator '>
+                        <span className='indicator' style={{width:dataNeeded===1 && "5rem"  , borderColor:dataNeeded===1 && "rgb(94 234 212) "}} />
+                        <ListItemText  primary={<span className={`title menuitemFS  ${dataNeeded===1 ? 'clrsixtext':"clrfivetext"}`}>About</span>} />
+                    </ListItemButton>
+                </ListItem>
+                <ListItem onClick={()=>handleactivechange(2)} disablePadding>
+                    <ListItemButton className='menuindicator '>
+                        <span className='indicator'  style={{width:dataNeeded===2 && "5rem"  , borderColor:dataNeeded===2 && "rgb(94 234 212) "}}/>
+                        <ListItemText  primary={<span className={`title menuitemFS  ${dataNeeded===2 ? 'clrsixtext':"clrfivetext"}`}>Skills</span>} />
+                    </ListItemButton>
+                </ListItem>
+                <ListItem  onClick={()=>handleactivechange(3)} disablePadding>
+                    <ListItemButton className='menuindicator '>
+                        <span className='indicator'  style={{width:dataNeeded===3 && "5rem"  , borderColor:dataNeeded===3 && "rgb(94 234 212) "}}/>
+                        <ListItemText  primary={<span className={`title menuitemFS  ${dataNeeded===3? 'clrsixtext':"clrfivetext"}`}> Projects</span>} />
+                    </ListItemButton>
+                </ListItem>
+
+                <ListItem  onClick={()=>handleactivechange(4)} disablePadding>
+                    <ListItemButton className='menuindicator '>
+                        <span className='indicator'  style={{width:dataNeeded===4 && "5rem" , borderColor:dataNeeded===4 && "rgb(94 234 212) "}}/>
+                        <ListItemText  primary={<span className={`title menuitemFS  ${dataNeeded===4? 'clrsixtext':"clrfivetext"}`}>  Education</span>} />
+                    </ListItemButton>
+                </ListItem>
+                <ListItem  onClick={()=>handleactivechange(5)} disablePadding>
+                    <ListItemButton className='menuindicator '>
+                        <span className='indicator'  style={{width:dataNeeded===5 && "5rem"  , borderColor:dataNeeded===5 && "rgb(94 234 212) "}}/>
+                        <ListItemText  primary={<span className={`title menuitemFS  ${dataNeeded===5? 'clrsixtext':"clrfivetext"}`}> linguistics :)</span>} />
+                    </ListItemButton>
+                </ListItem>
+            </List>
+
+
+        </Box>
+    );
+
+
+    // ----------------------------------------------------------------------
+
+
+
+
+
+
+
+
+
+
 
 
     const dispatch = useDispatch()
@@ -18,9 +96,9 @@ const Homeaboutme = () => {
 
 
         const intersectionObserver = new IntersectionObserver((entries) => {
-            console.log(entries)
+
             if (entries[0].intersectionRatio <= 0) {
-                console.log('not visible')
+
             } else {
                 dispatch(changeNav(1))
             }
@@ -40,13 +118,32 @@ const Homeaboutme = () => {
     return (
         <>
 
-            <Grid xs={12} sm={4} className='zindex' sx={{display: 'flex', flexDirection: 'column', p: {xs: 2, sm: 0}}}>
+            <Grid xs={12} sm={4} className='zindex' sx={{display: 'flex', flexDirection: 'column', p: {xs: 4, sm: 0}}}>
 
 
                 <Typography component='article' className='title titleFS clrthreetext zindex' sx={{fontWeight: 'bold'}}>
+
                     Ramin Hasani
 
+                    {/*drawer for mobile*/}
+                    <IconButton onClick={toggleDrawer(true)}
+                                sx={{float: 'right', my: 'auto', display: {md: 'none'}}}><LunchDining
+                        className='clrsixtext'/></IconButton>
+                    <Drawer anchor='right' open={open} onClose={toggleDrawer(false)} sx={{
+                        '& .MuiDrawer-paper': {
+                            backgroundColor: 'rgb(15 23 42)'
+                        }
+                    }}>
+                        {DrawerList}
+                        <Typography component='p' className='title clrfourtext'
+                                    sx={{mt: 'auto', mb: 2, textAlign: 'center', p: 2}}>
+                            designed with <i className='hearteffect'> ❤️</i>
+                        </Typography>
+                    </Drawer>
+
+
                 </Typography>
+
 
                 <Typography component='article' className='title subtitleFS clrfourtext zindex'>
                     front-end software engineer
@@ -64,7 +161,7 @@ const Homeaboutme = () => {
 
 
             <Grid xs={12} sm={8}>
-                <Grid container sx={{overflow: 'auto', maxHeight: '85vh', px: 3}}>
+                <Grid container className='containerheight' sx={{overflow: 'auto', px: 3}}>
                     <Grid className=' zindex' xs={12} id={1} sx={{mb: 2, minHeight: '100vh'}}>
                         <ReactTyped
                             backSpeed={50}
@@ -87,7 +184,7 @@ const Homeaboutme = () => {
                                     className='bodyfont bodyFS--lineheight clrfourtext zindex'>
                             Back in 2013, I won an award from <strong className='clrsixtext'>
                             Samsung Electronics </strong> & <strong className='clrsixtext'> Sharif University of
-                            Technology</strong>
+                            Technology </strong>
                             in the field of best ideas.
                             I didnt have the privilege to educate in the field of technology until 2018, when I started
                             my <strong className='clrsixtext'> master's degree</strong> education in the field of

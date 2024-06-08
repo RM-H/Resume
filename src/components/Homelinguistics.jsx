@@ -26,7 +26,7 @@ const Homelinguistics = () => {
         },{
             root: null, // relative to document viewport
             rootMargin: '0px',
-            threshold: 0.9// trigger callback when 10% of the target is visible
+            threshold: 0.7// trigger callback when 10% of the target is visible
         });
 // start observing
         intersectionObserver.observe(el5);
@@ -56,14 +56,18 @@ const Homelinguistics = () => {
                         </Typography>
                     </Grid>
 
-                    <Grid xs={12} sx={{minHeight: '36vh'}}>
+                    <Grid xs={12} sx={{minHeight: '36vh' , pt:6}}>
                         <Languagechart/>
                     </Grid>
 
 
-                    <Grid xs={12}>
-                        <Typography component='p' className='signature clrthreetext' style={{textAlign: 'center'}}>
-                            Designed By <strong className='clrsixtext'>:</strong> Ramin Hasani
+                    <Grid xs={12} sx={{mt:5 }}>
+
+
+                        <Typography component='p' className='signature clrthreetext' style={{textAlign: 'center' , display:'flex' , justifyContent:'center' , alignItems:'center'}}>
+                            <img src='/assets/icons/logo.svg' width='6%' style={{marginTop: 'auto' , marginRight:'1rem'}}
+                            />
+                           Ramin Hasani
                         </Typography>
 
                     </Grid>
