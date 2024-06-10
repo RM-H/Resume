@@ -193,9 +193,9 @@ const Homeaboutme = () => {
                             Technology in a private institute.
                             After graduation, I started as a front-end development intern and learned more about
                             Front-end development. Technologies like Javascript made much sense to me. So my time and
-                            effort has been dedicated to learning Javascript related technologies such as <strong
+                            effort have been dedicated to learning Javascript related technologies such as <strong
                             className='clrsixtext'>React JS </strong> and <strong className='clrsixtext'> Node
-                            JS </strong> ever since. Fast-forward to today, and I’ve had the privilege of building
+                            JS </strong> ever since. Fast-forward to today and I’ve had the privilege of building
                             software for an <strong className='clrsixtext'>advertising agency & many of their
                             clients </strong> , a <strong className='clrsixtext'>start-up </strong> ,a <strong
                             className='clrsixtext'>factory </strong> and a <strong className='clrsixtext'>digital

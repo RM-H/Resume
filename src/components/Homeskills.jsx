@@ -126,9 +126,12 @@ const Homeskills = () => {
 
                 {/*resume button*/}
                 <Grid xs={12} sx={{ mt:3}}>
-                    <Button className='clrthreetext'>
-                        View Full Résumé
-                    </Button>
+                    <a className='cursor' href='https://res.storage.iran.liara.space/Ramin%20Hasani%20resume.pdf' target='_blank'>
+                        <Button className='clrthreetext'>
+                            View Full Résumé
+                        </Button>
+                    </a>
+
                 </Grid>
 
 

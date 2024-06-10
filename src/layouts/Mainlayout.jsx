@@ -53,7 +53,7 @@ const Mainlayout = () => {
                 }}>
                     <img src='/assets/icons/logo.svg' width='16%' style={{alignSelf: 'start' , marginLeft:'2rem' , marginTop:'1rem' }}/>
                     <List className='w100' sx={{marginTop:"auto" , marginBottom:'auto'}}>
-                        <ListItem onClick={() => handleactivechange(1)}>
+                        <ListItem onClick={() => handleactivechange(1)} className='cursor'>
                             <ListItemButton className='menuindicator '>
                                 <span className='indicator' style={{
                                     width: dataNeeded === 1 && "5rem",
