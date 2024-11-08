@@ -28,6 +28,8 @@ const Cursor = () => {
 
     return (
         <div
+            className='hide-mobile'
+
             style={{
                 position: 'fixed',
                 top: 0,

@@ -160,9 +160,9 @@ const Homeaboutme = () => {
             </Grid>
 
 
-            <Grid xs={12} sm={8}>
-                <Grid container className='containerheight' sx={{overflow: 'auto', px: 3}}>
-                    <Grid className=' zindex' xs={12} id={1} sx={{mb: 2, minHeight: '100vh'}}>
+            <Grid xs={12} sm={8} sx={{overflow:'scroll'}}>
+                <Grid container className='containerheight' sx={{ px: 3}}>
+                    <Grid className=' zindex' xs={12} id={1} sx={{mb: 2, minHeight: '100dvh'}}>
                         <ReactTyped
                             backSpeed={50}
                             startWhenVisible

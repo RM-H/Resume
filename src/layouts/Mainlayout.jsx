@@ -37,10 +37,12 @@ const Mainlayout = () => {
             <Grid container
                   className="container clrtwo "
 
-                  style={{
-                      height: "100vh",
+                  sx={{
+                      height: "100dvh",
                       marginRight: "auto",
                       marginLeft: "auto",
+                      overflow:'hidden'
+
 
 
                   }}
@@ -51,7 +53,7 @@ const Mainlayout = () => {
                     flexDirection: 'column',
 
                 }}>
-                    <img src='/assets/icons/logo.svg' width='16%' style={{alignSelf: 'start' , marginLeft:'2rem' , marginTop:'1rem' }}/>
+
                     <List className='w100' sx={{marginTop:"auto" , marginBottom:'auto'}}>
                         <ListItem onClick={() => handleactivechange(1)} className='cursor'>
                             <ListItemButton className='menuindicator '>
@@ -107,7 +109,7 @@ const Mainlayout = () => {
                     </List>
                 </Grid>
 
-                <Grid xs={12} sm={10} sx={{height: '100vh'}}>
+                <Grid xs={12} sm={10} sx={{height: '100dvh' }}>
                 {/*<Nav/>*/}
 
                     <main >

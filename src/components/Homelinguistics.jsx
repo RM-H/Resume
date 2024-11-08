@@ -33,7 +33,7 @@ const Homelinguistics = () => {
     }, []);
     return (
         <>
-            <Grid className='zindex' xs={12} id={5} sx={{minHeight: '100vh'}}>
+            <Grid className='zindex' xs={12} id={5} sx={{minHeight: '100dvh' }}>
 
 
                 <Grid container>
@@ -56,7 +56,7 @@ const Homelinguistics = () => {
                         </Typography>
                     </Grid>
 
-                    <Grid xs={12} sx={{minHeight: '36vh' , pt:6}}>
+                    <Grid xs={12} sx={{maxHeight: '29vh' , pt:6}}>
                         <Languagechart/>
                     </Grid>
 
@@ -65,8 +65,7 @@ const Homelinguistics = () => {
 
 
                         <Typography component='p' className='signature clrthreetext' style={{textAlign: 'center' , display:'flex' , justifyContent:'center' , alignItems:'center'}}>
-                            <img src='/assets/icons/logo.svg' width='6%' style={{marginTop: 'auto' , marginRight:'1rem'}}
-                            />
+
                            Ramin Hasani
                         </Typography>
 
